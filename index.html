@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mariana Lima · Portfólio</title>
+  <meta name="description" content="Portfólio de Mariana Lima — Backend (Python), APIs, Flask/FastAPI, projetos com testes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --border: #e5e7eb; /* gray-200 */
+      --card: #ffffff;
+      --accent: #1f2937; /* gray-800 */
+      --accent-2: #3b82f6; /* blue-500 */
+      --chip-bg:#eef2ff; --chip-bd:#e0e7ff; --chip-tx:#3730a3;
+      --hero-a:#f5f3ff; --hero-b:#ecfeff; /* lilac→cyan bem suave */
+      --container: 1080px;
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}
+    a{color:inherit}
+    .container{max-width:var(--container);margin:0 auto;padding:0 16px}
+    header.site-header{background:linear-gradient(135deg,var(--hero-a),var(--hero-b));border-bottom:1px solid var(--border);}
+    .header-inner{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;padding:56px 0;align-items:center}
+    h1{margin:0;font-size:40px;line-height:1.1}
+    .subtitle{margin:8px 0 16px;color:var(--muted)}
+    .cta{display:flex;gap:12px;margin-top:10px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid transparent}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.primary:hover{opacity:.92}
+    .btn.ghost{background:transparent;border-color:var(--accent);color:var(--accent)}
+    .badge-list{display:grid;gap:8px;list-style:none;padding:0;margin:0}
+    .badge-list li{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
+
+    main .section{padding:56px 0}
+    .section.alt{background:#f8fafc}
+    h2{margin:0 0 16px;font-size:26px}
+    p{line-height:1.6}
+
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:0;font-size:18px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:4px 0 0;padding:0}
+    .tags li{background:var(--chip-bg);border:1px solid var(--chip-bd);color:var(--chip-tx);padding:4px 8px;border-radius:999px;font-size:12px}
+    .links{display:flex;gap:12px;margin-top:4px}
+    .links a{text-decoration:underline;font-weight:600}
+
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .skills ul{margin:0;padding-left:18px}
+
+    .contact{list-style:none;padding:0;display:grid;gap:10px}
+    .contact a{text-decoration:underline}
+
+    footer.site-footer{border-top:1px solid var(--border);padding:20px 0;color:#334155;text-align:center;background:#fff}
+
+    nav.top{position:sticky;top:0;background:#ffffffd9;backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:5}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .brand{font-weight:700}
+    .nav-links{display:flex;gap:14px}
+    .nav-links a{padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{background:#f1f5f9}
+
+    html{scroll-behavior:smooth}
+
+    @media (max-width: 920px){
+      .header-inner{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .skills{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegação fixa -->
+  <nav class="top">
+    <div class="container nav-inner">
+      <div class="brand">Mariana Lima</div>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#skills">Skills</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Cabeçalho -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Desenvolvedora Backend (Python)</h1>
+        <p class="subtitle">APIs · Flask · FastAPI · Testes · Git/GitHub</p>
+        <div class="cta">
+          <a href="#projetos" class="btn primary">Ver projetos</a>
+          <a href="#contato" class="btn ghost">Entrar em contato</a>
+        </div>
+      </div>
+      <div>
+        <ul class="badge-list">
+          <li>Foco em APIs REST bem documentadas</li>
+          <li>Testes automatizados (PyTest)</li>
+          <li>Banco de dados: SQLite · PostgreSQL (básico)</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Sobre</h2>
+        <p>
+          Oi! Eu sou a Mari, estudante de Ciência da Computação, apaixonada por <strong>backend em Python</strong>.
+          Gosto de construir APIs limpas, testáveis e simples de manter. Estou em busca do meu <strong>primeiro estágio</strong>
+          para evoluir ainda mais enquanto entrego valor para o time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section alt">
+      <div class="container">
+        <h2>Projetos em Destaque</h2>
+        <div class="projects">
+          <article class="card">
+            <h3>TODO API (Flask)</h3>
+            <p>API REST de tarefas com CRUD, validações simples e testes com PyTest.</p>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>PyTest</li><li>REST</li></ul>
+            <div class="links">
+              <a href="https://github.com/marianalima-dev/todo-api-flask" target="_blank" rel="noopener">Repositório</a>
+              <a href="#" target="_blank" rel="noopener">Docs</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Encurtador de URL (FastAPI)</h3>
+            <p>Criação de slugs únicos e redirecionamento. V1 em memória; V2 com SQLite e pydantic.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Pydantic</li></ul>
+            <div class="links">
+              <a href="https://github.com/marianalima-dev/url-shortener" target="_blank" rel="noopener">Repositório</a>
+              <a href="#" target="_blank" rel="noopener">/docs</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Scraper de Vagas → CSV</h3>
+            <p>Coleta de títulos, empresas e links e exporta para CSV para análise rápida.</p>
+            <ul class="tags"><li>Requests</li><li>BeautifulSoup</li><li>Pandas</li></ul>
+            <div class="links">
+              <a href="https://github.com/marianalima-dev/job-scraper" target="_blank" rel="noopener">Repositório</a>
+              <a href="#" target="_blank" rel="noopener">Exemplo CSV</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills">
+          <ul>
+            <li><strong>Backend:</strong> Python, Flask, FastAPI, SQLite, PostgreSQL (básico)</li>
+            <li>Testes: PyTest</li>
+            <li>APIs REST, JSON</li>
+          </ul>
+          <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Figma</li>
+            <li>Controle de versão: Git/GitHub</li>
+            <li>Docker (noções)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section alt">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Curtiu? Bora conversar. Estou aberta a oportunidades de <strong>estágio</strong>.</p>
+        <ul class="contact">
+          <li><strong>E-mail:</strong> <a href="mailto:marianalimagomescna@gmail.com">marianalimagomescna@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/marianalima-dev" target="_blank" rel="noopener">github.com/marianalima-dev</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/marianalima-dev" target="_blank" rel="noopener">linkedin.com/in/marianalima-dev</a></li>
+          <li><strong>Currículo (PDF):</strong> <a href="./cv.pdf" target="_blank" rel="noopener" download>baixar</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 · Mariana Lima · Feito com ♥ e Python</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
